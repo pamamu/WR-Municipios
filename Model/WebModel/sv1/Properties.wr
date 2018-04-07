@@ -1,3 +1,16 @@
-<SiteView id="sv1" name="Gestion Municipios">
-  <OperationUnits/>
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Gestion Municipios" homePage="sv1#page1">
+  <OperationUnits>
+    <ExcelUnit gr:x="170" gr:y="290" id="sv1#exu1" name="Excel" mode="read" format="xls" sourceType="blob">
+      <CellInfo id="sv1#exu1#ci1" name="Nombre_Municipio" type="string" preserveCellStyle="false" autoSizeColumn="true" column="C" rows="2:" sheet="1" contentType="text/plain"/>
+      <CellInfo id="sv1#exu1#ci2" name="Provincia" type="string" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="B" rows="2:" contentType="text/plain"/>
+      <CellInfo id="sv1#exu1#ci3" name="Latitud" type="float" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="D" rows="2:"/>
+      <CellInfo id="sv1#exu1#ci4" name="Longitud" type="float" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="E" rows="2:"/>
+      <CellInfo id="sv1#exu1#ci5" name="Mujeres" type="integer" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="I" rows="2:"/>
+      <CellInfo id="sv1#exu1#ci6" name="Hombres" type="integer" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="H" rows="2:"/>
+      <CellInfo id="sv1#exu1#ci7" name="Coordenadas" type="string" preserveCellStyle="false" autoSizeColumn="true" contentType="text/plain" sheet="1" column="J" rows="2:"/>
+      <CellInfo id="sv1#exu1#ci8" name="Habitantes" type="integer" preserveCellStyle="false" autoSizeColumn="true" contentType="text/plain" sheet="1" column="G" rows="2:"/>
+    </ExcelUnit>
+    <LoopUnit gr:x="310" gr:y="285" id="sv1#lpu1" name="Bucle"/>
+    <CreateUnit gr:x="430" gr:y="280" id="sv1#cru1" name="Municipio" entity="ent1"/>
+  </OperationUnits>
 </SiteView>
