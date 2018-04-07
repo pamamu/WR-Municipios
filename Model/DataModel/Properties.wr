@@ -30,4 +30,14 @@
     <RelationshipRole1 id="Group2Module" name="modules" maxCard="N"/>
     <RelationshipRole2 id="Module2Group" name="groups" maxCard="N"/>
   </Relationship>
+  <Entity gr:x="260" gr:y="330" id="ent1" name="Municipio" duration="persistent" attributeOrder="ent1#att1 ent1#att2 ent1#att3 ent1#att4 ent1#att5 ent1#att6 ent1#att7 ent1#att8">
+    <Attribute id="ent1#att1" key="true" name="oid" type="integer"/>
+    <Attribute id="ent1#att2" name="nombre" type="string"/>
+    <Attribute id="ent1#att3" name="hombres" type="integer"/>
+    <Attribute id="ent1#att4" name="mujeres" type="integer"/>
+    <Attribute id="ent1#att5" name="poblacion" type="integer"/>
+    <Attribute id="ent1#att6" name="latitud" type="string"/>
+    <Attribute id="ent1#att7" name="longitud" type="string"/>
+    <Attribute id="ent1#att8" name="coordenadas" type="string"/>
+  </Entity>
 </DataModel>
