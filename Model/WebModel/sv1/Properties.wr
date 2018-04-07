@@ -1,4 +1,4 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Gestion Municipios" homePage="sv1#page1">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Gestion Municipios" homePage="sv1#page1" landmarks="sv1#page2">
   <OperationUnits>
     <ExcelUnit gr:x="170" gr:y="290" id="sv1#exu1" name="Excel" mode="read" format="xls" sourceType="blob">
       <CellInfo id="sv1#exu1#ci1" name="Nombre_Municipio" type="string" preserveCellStyle="false" autoSizeColumn="true" column="C" rows="2:" sheet="1" contentType="text/plain"/>
@@ -9,8 +9,35 @@
       <CellInfo id="sv1#exu1#ci6" name="Hombres" type="integer" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="H" rows="2:"/>
       <CellInfo id="sv1#exu1#ci7" name="Coordenadas" type="string" preserveCellStyle="false" autoSizeColumn="true" contentType="text/plain" sheet="1" column="J" rows="2:"/>
       <CellInfo id="sv1#exu1#ci8" name="Habitantes" type="integer" preserveCellStyle="false" autoSizeColumn="true" contentType="text/plain" sheet="1" column="G" rows="2:"/>
+      <OKLink id="sv1#exu1#oln1" name="OKFlow1" to="sv1#lpu1">
+        <LinkParameter id="sv1#exu1#oln1#par2" name="Coordenadas_Coordenadas" source="sv1#exu1#ci7Array" target="sv1#lpu1#lsa5"/>
+        <LinkParameter id="sv1#exu1#oln1#par3" name="Hombres_Hombres" source="sv1#exu1#ci6Array" target="sv1#lpu1#lsa2"/>
+        <LinkParameter id="sv1#exu1#oln1#par4" name="Nombre_Municipio_Input Array" source="sv1#exu1#ci1Array" target="sv1#lpu1.array"/>
+        <LinkParameter id="sv1#exu1#oln1#par5" name="Latitud_Latitud" source="sv1#exu1#ci3Array" target="sv1#lpu1#lsa1"/>
+        <LinkParameter id="sv1#exu1#oln1#par6" name="Longitud_Longitud" source="sv1#exu1#ci4Array" target="sv1#lpu1#lsa3"/>
+        <LinkParameter id="sv1#exu1#oln1#par7" name="Mujeres_Mujeres" source="sv1#exu1#ci5Array" target="sv1#lpu1#lsa4"/>
+      </OKLink>
     </ExcelUnit>
-    <LoopUnit gr:x="310" gr:y="285" id="sv1#lpu1" name="Bucle"/>
-    <CreateUnit gr:x="430" gr:y="280" id="sv1#cru1" name="Municipio" entity="ent1"/>
+    <LoopUnit gr:x="320" gr:y="290" id="sv1#lpu1" name="Bucle">
+      <SecondaryArray id="sv1#lpu1#lsa1" name="Latitud"/>
+      <SecondaryArray id="sv1#lpu1#lsa2" name="Hombres"/>
+      <SecondaryArray id="sv1#lpu1#lsa3" name="Longitud"/>
+      <SecondaryArray id="sv1#lpu1#lsa4" name="Mujeres"/>
+      <SecondaryArray id="sv1#lpu1#lsa5" name="Coordenadas"/>
+      <OKLink id="sv1#lpu1#oln2" name="OKFlow2" to="sv1#cru1" code="next" gr:bendpoints="63,-23,-72,-23">
+        <LinkParameter id="sv1#lpu1#oln2#par8" name="Next Element (Coordenadas)_coordenadas" source="sv1#lpu1#lsa5" target="sv1#cru1.ent1#att8"/>
+        <LinkParameter id="sv1#lpu1#oln2#par9" name="Next Element (Hombres)_hombres" source="sv1#lpu1#lsa2" target="sv1#cru1.ent1#att3"/>
+        <LinkParameter id="sv1#lpu1#oln2#par10" name="Next Element (Latitud)_latitud" source="sv1#lpu1#lsa1" target="sv1#cru1.ent1#att6"/>
+        <LinkParameter id="sv1#lpu1#oln2#par11" name="Next Element (Longitud)_longitud" source="sv1#lpu1#lsa3" target="sv1#cru1.ent1#att7"/>
+        <LinkParameter id="sv1#lpu1#oln2#par12" name="Next Element (Mujeres)_mujeres" source="sv1#lpu1#lsa4" target="sv1#cru1.ent1#att4"/>
+        <LinkParameter id="sv1#lpu1#oln2#par13" name="Next Element_nombre_municipio" source="next" target="sv1#cru1.ent1#att2"/>
+      </OKLink>
+      <OKLink id="sv1#lpu1#oln3" name="OKFlow3" to="sv1#page1#mssu1" code="end">
+        <LinkParameter id="sv1#lpu1#oln3#par14" name="Municipios A&#241;adidos con &#201;xito_Shown Messages" sourceValue="Municipios A&#241;adidos con &#201;xito" target="sv1#page1#mssu1.shownMessages"/>
+      </OKLink>
+    </LoopUnit>
+    <CreateUnit gr:x="450" gr:y="280" id="sv1#cru1" name="Municipio" entity="ent1">
+      <OKLink id="sv1#cru1#oln4" name="OKFlow4" to="sv1#lpu1" automaticCoupling="true" gr:bendpoints="-72,23,63,23"/>
+    </CreateUnit>
   </OperationUnits>
 </SiteView>
