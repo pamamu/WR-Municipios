@@ -1,0 +1,25 @@
+<Job xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="wsv1#job1" name="Borrar Municipios" gr:x="85" gr:y="80">
+  <OperationUnits>
+    <InitJobUnit id="wsv1#job1#iju1" name="Init Job" gr:x="10" gr:y="0">
+      <OKLink id="wsv1#job1#iju1#oln7" name="OKFlow7" to="wsv1#job1#seu2" automaticCoupling="true"/>
+    </InitJobUnit>
+    <SelectorUnit gr:x="160" gr:y="30" id="wsv1#job1#seu2" name="Municipios" entity="ent1">
+      <OKLink id="wsv1#job1#seu2#oln5" name="OKFlow5" to="wsv1#job1#lpu2">
+        <LinkParameter id="wsv1#job1#seu2#oln5#par21" name="oid_Input Array" source="ent1#att1Array" target="wsv1#job1#lpu2.array"/>
+      </OKLink>
+    </SelectorUnit>
+    <LoopUnit gr:x="180" gr:y="160" id="wsv1#job1#lpu2" name="Bucle">
+      <OKLink id="wsv1#job1#lpu2#oln6" name="OKFlow6" to="wsv1#job1#dlu1" code="next">
+        <LinkParameter id="wsv1#job1#lpu2#oln6#par22" name="Next Element_KeyCondition2 [oid]" source="next" target="wsv1#job1#dlu1#su3#kcond2.ent1#att1"/>
+      </OKLink>
+      <OKLink id="wsv1#job1#lpu2#oln8" name="OKFlow8" to="wsv1#job1#opu1" automaticCoupling="true" code="end"/>
+    </LoopUnit>
+    <DeleteUnit gr:x="0" gr:y="135" id="wsv1#job1#dlu1" name="BorrarMunicipio" entity="ent1">
+      <Selector id="wsv1#job1#dlu1#su3" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="wsv1#job1#dlu1#su3#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="wsv1#job1#dlu1#oln11" name="OKFlow11" to="wsv1#job1#lpu2" automaticCoupling="true" gr:bendpoints="90,61,-65,51"/>
+    </DeleteUnit>
+    <NoOpOperationUnit gr:x="180" gr:y="275" id="wsv1#job1#opu1" name="Final"/>
+  </OperationUnits>
+</Job>

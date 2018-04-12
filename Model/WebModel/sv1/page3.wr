@@ -1,0 +1,103 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="180" gr:y="400" id="sv1#page3" name="Listar Alfabet" landmark="true">
+  <ContentUnits>
+    <AlphabetUnit gr:x="0" gr:y="0" id="sv1#page3#alphu1" name="&#205;ndice Alfab&#233;tico" useNumbers="false" entity="ent1" attribute="ent1#att2" linkOrder="sv1#page3#alphu1#ln3">
+      <Link id="sv1#page3#alphu1#ln3" name="Flow3" to="sv1#page3#pwu2" type="normal" validate="true">
+        <LinkParameter id="sv1#page3#alphu1#ln3#par18" name="Selected Letter_AttCondition1" source="data[].letter" target="sv1#page3#pwu2#su1#acond1"/>
+      </Link>
+    </AlphabetUnit>
+    <PowerIndexUnit gr:x="200" gr:y="0" id="sv1#page3#pwu2" name="Municipios que comienzan por..." sortable="true" checkable="false" useCountQuery="false" entity="ent1" linkOrder="sv1#page3#pwu2#ln4" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att11">
+      <Selector id="sv1#page3#pwu2#su1" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#page3#pwu2#su1#acond1" name="AttCondition1" predicate="beginsWith" booleanOperator="or" implied="false" attributes="ent1#att2"/>
+      </Selector>
+      <Link id="sv1#page3#pwu2#ln4" name="Ver" to="sv1#page3#dau1" automaticCoupling="true" type="normal" validate="true"/>
+    </PowerIndexUnit>
+    <DataUnit gr:x="255" gr:y="165" id="sv1#page3#dau1" name="VIsta Detalle" entity="ent1" displayAttributes="ent1#att2 ent1#att3 ent1#att4 ent1#att6 ent1#att7 ent1#att8 ent1#att11">
+      <Selector id="sv1#page3#dau1#su2" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv1#page3#dau1#su2#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </Selector>
+    </DataUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page3#alphu1">
+          <layout:Link link="sv1#page3#alphu1#ln3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="8">
+        <layout:Unit unitId="sv1#page3#pwu2">
+          <layout:Link link="sv1#page3#pwu2#ln4"/>
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell colspan="4">
+        <layout:Unit unitId="sv1#page3#dau1">
+          <layout:Attribute attribute="ent1#att2"/>
+          <layout:Attribute attribute="ent1#att3"/>
+          <layout:Attribute attribute="ent1#att4"/>
+          <layout:Attribute attribute="ent1#att6"/>
+          <layout:Attribute attribute="ent1#att7"/>
+          <layout:Attribute attribute="ent1#att8"/>
+          <layout:Attribute attribute="ent1#att11"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12"/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

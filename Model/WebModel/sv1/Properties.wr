@@ -1,6 +1,6 @@
-<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Gestion Municipios" homePage="sv1#page1" landmarks="sv1#page2">
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv1" name="Gestion Municipios" homePage="sv1#page1" landmarks="sv1#page2 sv1#page3 sv1#page4">
   <OperationUnits>
-    <ExcelUnit gr:x="170" gr:y="290" id="sv1#exu1" name="Excel" mode="read" format="xls" sourceType="blob">
+    <ExcelUnit gr:x="170" gr:y="290" id="sv1#exu1" name="Excel" mode="read" format="xls" sourceType="blob" url="WEB-INF/descr/IW_listado_Extremadura.xls">
       <CellInfo id="sv1#exu1#ci1" name="Nombre_Municipio" type="string" preserveCellStyle="false" autoSizeColumn="true" column="C" rows="2:" sheet="1" contentType="text/plain"/>
       <CellInfo id="sv1#exu1#ci2" name="Provincia" type="string" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="B" rows="2:" contentType="text/plain"/>
       <CellInfo id="sv1#exu1#ci3" name="Latitud" type="float" preserveCellStyle="false" autoSizeColumn="true" sheet="1" column="D" rows="2:"/>
@@ -16,7 +16,9 @@
         <LinkParameter id="sv1#exu1#oln1#par5" name="Latitud_Latitud" source="sv1#exu1#ci3Array" target="sv1#lpu1#lsa1"/>
         <LinkParameter id="sv1#exu1#oln1#par6" name="Longitud_Longitud" source="sv1#exu1#ci4Array" target="sv1#lpu1#lsa3"/>
         <LinkParameter id="sv1#exu1#oln1#par7" name="Mujeres_Mujeres" source="sv1#exu1#ci5Array" target="sv1#lpu1#lsa4"/>
+        <LinkParameter id="sv1#exu1#oln1#par15" name="Prediccion_Prediccion" source="sv1#exu1#ci9Array" target="sv1#lpu1#lsa6"/>
       </OKLink>
+      <CellInfo id="sv1#exu1#ci9" name="Prediccion" type="url" preserveCellStyle="false" autoSizeColumn="true" contentType="url" sheet="1" rows="2:" column="L"/>
     </ExcelUnit>
     <LoopUnit gr:x="320" gr:y="290" id="sv1#lpu1" name="Bucle">
       <SecondaryArray id="sv1#lpu1#lsa1" name="Latitud"/>
@@ -31,13 +33,26 @@
         <LinkParameter id="sv1#lpu1#oln2#par11" name="Next Element (Longitud)_longitud" source="sv1#lpu1#lsa3" target="sv1#cru1.ent1#att7"/>
         <LinkParameter id="sv1#lpu1#oln2#par12" name="Next Element (Mujeres)_mujeres" source="sv1#lpu1#lsa4" target="sv1#cru1.ent1#att4"/>
         <LinkParameter id="sv1#lpu1#oln2#par13" name="Next Element_nombre_municipio" source="next" target="sv1#cru1.ent1#att2"/>
+        <LinkParameter id="sv1#lpu1#oln2#par16" name="Next Element (Prediccion)_Prediccion" source="sv1#lpu1#lsa6" target="sv1#cru1.ent1#att5"/>
       </OKLink>
       <OKLink id="sv1#lpu1#oln3" name="OKFlow3" to="sv1#page1#mssu1" code="end">
         <LinkParameter id="sv1#lpu1#oln3#par14" name="Municipios A&#241;adidos con &#201;xito_Shown Messages" sourceValue="Municipios A&#241;adidos con &#201;xito" target="sv1#page1#mssu1.shownMessages"/>
       </OKLink>
+      <SecondaryArray id="sv1#lpu1#lsa6" name="Prediccion"/>
     </LoopUnit>
     <CreateUnit gr:x="450" gr:y="280" id="sv1#cru1" name="Municipio" entity="ent1">
       <OKLink id="sv1#cru1#oln4" name="OKFlow4" to="sv1#lpu1" automaticCoupling="true" gr:bendpoints="-72,23,63,23"/>
     </CreateUnit>
+    <ScheduleJobUnit gr:x="5" gr:y="280" id="sv1#scju1" name="Borrar Municipios" schedulePolicy="now" job="wsv1#job1">
+      <OKLink id="sv1#scju1#oln9" name="OKFlow9" to="sv1#exu1" automaticCoupling="true"/>
+    </ScheduleJobUnit>
+    <ScheduleJobUnit gr:x="0" gr:y="130" id="sv1#scju2" name="Borrar" schedulePolicy="now" job="wsv1#job1">
+      <OKLink id="sv1#scju2#oln10" name="OKFlow10" to="sv1#page1" automaticCoupling="true"/>
+    </ScheduleJobUnit>
+    <ScheduleJobUnit gr:x="905" gr:y="495" id="sv1#scju3" name="Borrar Programado" schedulePolicy="specificDate" job="wsv1#job1">
+      <OKLink id="sv1#scju3#oln12" name="OKFlow12" to="sv1#page4#mssu2">
+        <LinkParameter id="sv1#scju3#oln12#par24" name="Borrados_Shown Messages" sourceValue="Borrados" target="sv1#page4#mssu2.shownMessages"/>
+      </OKLink>
+    </ScheduleJobUnit>
   </OperationUnits>
 </SiteView>

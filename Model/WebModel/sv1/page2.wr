@@ -2,17 +2,17 @@
   <ContentUnits>
     <SelectorUnit gr:x="0" gr:y="0" id="sv1#page2#seu1" name="Selector1" entity="ent1">
       <Link id="sv1#page2#seu1#ln2" name="Flow2" to="sv1#page2#gmu1" type="transport" validate="true">
-        <LinkParameter id="sv1#page2#seu1#ln2#par15" name="coordenadas_Marker Coordinates" source="ent1#att8Array" target="sv1#page2#gmu1.markerCoords"/>
-        <LinkParameter id="sv1#page2#seu1#ln2#par16" name="poblacion_Marker Info" source="ent1#att11Array" target="sv1#page2#gmu1.markerInfo"/>
-        <LinkParameter id="sv1#page2#seu1#ln2#par17" name="nombre_municipio_Marker Title" source="ent1#att2Array" target="sv1#page2#gmu1.markerTitle"/>
+        <LinkParameter id="sv1#page2#seu1#ln2#par17" name="coordenadas_Marker Coordinates" source="ent1#att8Array" target="sv1#page2#gmu1.markerCoords"/>
+        <LinkParameter id="sv1#page2#seu1#ln2#par19" name="poblacion_Marker Info" source="ent1#att11Array" target="sv1#page2#gmu1.markerInfo"/>
+        <LinkParameter id="sv1#page2#seu1#ln2#par20" name="nombre_municipio_Marker Title" source="ent1#att2Array" target="sv1#page2#gmu1.markerTitle"/>
       </Link>
     </SelectorUnit>
-    <GoogleMapUnit gr:x="205" gr:y="5" id="sv1#page2#gmu1" name="Mapa Municipios" mapType="ROADMAP" isAdjustable="false" mapWidth="640" mapHeight="480" mapCoordinates="39.471819, -6.3811209" mapZoomLevel="10"/>
+    <GoogleMapUnit gr:x="180" gr:y="10" id="sv1#page2#gmu1" name="Mapa" mapType="ROADMAP" isAdjustable="false" mapsProvider="sdp1" mapZoomLevel="10" mapCoordinates="19,471819,-6,3811209" mapWidth="640" mapHeight="480"/>
   </ContentUnits>
   <layout:Grid containerType="grid">
     <layout:Row>
       <layout:Cell colspan="12">
-        <layout:Unit unitId="sv1#page2#gmu1"/>
+        <layout:Unit unitId="sv1#page2#gmu1" layout:unitLayout="StoreTemplates/Default"/>
       </layout:Cell>
       <layout:Cell/>
       <layout:Cell/>

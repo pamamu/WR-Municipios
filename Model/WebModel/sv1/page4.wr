@@ -1,0 +1,48 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="820" gr:y="345" id="sv1#page4" name="Borrado Municipios Programados" landmark="true">
+  <ContentUnits>
+    <EntryUnit gr:x="0" gr:y="0" id="sv1#page4#enu2" name="Programar" linkOrder="sv1#page4#enu2#ln7">
+      <Field id="sv1#page4#enu2#fld2" name="TimeStamp" type="timestamp" modifiable="true"/>
+      <Link id="sv1#page4#enu2#ln7" name="Programar" to="sv1#scju3" type="normal" validate="true">
+        <LinkParameter id="sv1#page4#enu2#ln7#par23" name="TimeStamp_Timestamp (yyyy-MM-dd hh:mm:ss)" source="sv1#page4#enu2#fld2" target="sv1#scju3.timestamp"/>
+      </Link>
+    </EntryUnit>
+    <MultiMessageUnit gr:x="150" gr:y="5" id="sv1#page4#mssu2" name="Resultado"/>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page4#enu2">
+          <layout:Field field="sv1#page4#enu2#fld2"/>
+          <layout:Link link="sv1#page4#enu2#ln7"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page4#mssu2"/>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
